@@ -25,7 +25,7 @@ def processData():
         # Authenticate the request
         authenticateRequest(token)
 
-        # Process data (placeholder for processing logic)
+        # Processing data
         processedData = data
         metadata = createMetadata()
         response = {

@@ -5,8 +5,9 @@ This guide will walk you through setting up a microservices architecture using D
 ## Prerequisites
 Make sure you have the following dependencies installed on your system:
 - Docker ([Docker's official website](https://www.docker.com/products/docker-desktop))
-- Node.js v18 
+- Node.js v14+ 
 - Python v3+
+- Clone this repository: `git@github.com:faraimrape/harvest.git`
 
 ## Setup Instructions
 1. **Harvest WordPress Backend Service**
@@ -38,12 +39,65 @@ Inside the `harvest` root folder, execute `docker-compose up --build` and verify
 - Harvest Node.js API: http://localhost:3000
 - Harvest Python Middleware: http://localhost:5002
 
+# API Endpoints
+
+Below is the set of endpoints to interact with the microservices. Please note that all requests require a Bearer token for authentication. Kindly refer to the json collection for further tests through postman
+
+## Base URL
+
+The base URL for all API requests is:
+`http://localhost:3000/api/`
+
+## Authorization
+
+All endpoints require a Bearer token for authorization. Include the following header in each request:
+Authorization: Bearer `^GoU9V3w*C%yhptS@Apr*3EK` 
+
+## Endpoints
+
+### Posts
+- **Retrieve all posts**
+GET /api/posts
+
+- **Retrieve a single post by ID**
+GET /api/posts/{post_id}
+
+### Pages
+- **Retrieve all pages**
+GET /api/pages
+
+- **Retrieve a single page by ID**
+GET /api/pages/{page_id}
+
+### Comments
+- **Retrieve all comments**
+GET /api/comments
+
+- **Retrieve comments for a specific post**
+GET /api/comments?post={post_id}
+
+### Users
+- **Retrieve all users**
+GET /api/users
+
+- **Retrieve a single user by ID**
+GET /api/users/{user_id}
+
+### Taxonomies
+- **Retrieve all categories**
+GET /api/categories
+
+### Media
+- **Retrieve all media items**
+GET /api/media
+
+### Tags
+- **Retrieve all tags**
+GET /api/tags
+
 ## Unit Tests
 - You can run unit tests for the Harvest Node.js API by navigating to the `harvest-nodejs-api` directory and running: `npm test`.
 - Similarly, tests for the Harvest Python Middleware can be run by navigating to the `harvest-python-middleware` directory and running: `pytest`.
 
 ## Cleanup
 - To stop and remove the Docker containers, run: `docker-compose down`.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
