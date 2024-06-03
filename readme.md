@@ -97,7 +97,7 @@ GET /api/tags
 
 ## Unit Tests
 - You can run unit tests for the Harvest Node.js API by navigating to the `harvest-nodejs-api` directory and running: `npm test`.
-- Similarly, tests for the Harvest Python Middleware can be run by navigating to the `harvest-python-middleware` directory and running: `pytest`.
+- Similarly, tests for the Harvest Python Middleware can be run by navigating to the `harvest-python-middleware` directory and running: `pytest app_tests.py`.
 
 ## Cleanup
 - To stop and remove the Docker containers, run: `docker-compose down`.
